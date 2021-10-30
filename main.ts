@@ -158,6 +158,7 @@ mySprite.setPosition(77, 92)
 mySprite.setStayInScreen(true)
 game.showLongText("Some people dont like you. They are dropping rocks on you. Avoid the rocks.", DialogLayout.Center)
 info.setScore(0)
+info.startCountdown(480)
 forever(function () {
     for (let index = 0; index < 2; index++) {
         mySprite2 = sprites.create(img`
