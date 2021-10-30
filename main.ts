@@ -8,7 +8,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 info.onLifeZero(function () {
     mySprite.destroy(effects.disintegrate, 2000)
     pause(100)
-    game.splash("You Dead bruh. Those stones were hard")
+    game.showLongText("You dead bruh. Those stones were hard", DialogLayout.Center)
     game.over(false, effects.dissolve)
 })
 let mySprite2: Sprite = null
