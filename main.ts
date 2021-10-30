@@ -8,6 +8,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSp
 info.onLifeZero(function () {
     mySprite.destroy(effects.disintegrate, 2000)
     pause(100)
+    game.splash("You Dead bruh. Those stones were hard")
     game.over(false, effects.dissolve)
 })
 let mySprite2: Sprite = null
@@ -155,9 +156,8 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 77, 0)
 mySprite.setPosition(77, 92)
 mySprite.setStayInScreen(true)
+game.showLongText("Some people dont like you. They are dropping rocks on you. Avoid the rocks.", DialogLayout.Center)
 info.setScore(0)
-game.splash("Some people dont like you. They are dropping rocks on you. Avoid the rocks.")
-info.startCountdown(480)
 forever(function () {
     for (let index = 0; index < 2; index++) {
         mySprite2 = sprites.create(img`
